@@ -26,6 +26,7 @@ export class AutomatedBillComponent {
   sanitizedPdfUrl: SafeResourceUrl | null = null;
   role: string = "";
   userName: string = "";
+  pdfUrl: SafeResourceUrl | null = null;
 
   constructor(
     private http: HttpClient,
@@ -114,22 +115,14 @@ export class AutomatedBillComponent {
 
 
   openPdfPopup(billId: number): void {
-    this.http.get(`${environment.apiBaseUrl}/scheduled-bills/${billId}/pdf-view`, { responseType: 'blob' }).subscribe({
-      next: (blob) => {
-        if (blob && blob.size > 0) {
-          const blobUrl = URL.createObjectURL(blob);
-          this.sanitizedPdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(blobUrl);
-          this.showPdfPopup = true;
-        } else {
-          this.errorMessage = "The PDF file is empty or could not be loaded.";
-        }
-      },
-      error: (error) => {
-        console.error("Failed to load PDF:", error);
-        this.errorMessage = "Failed to load PDF. Please check server logs.";
-      }
-    });
+    const url = `${environment.apiBaseUrl}/scheduled-bills/${billId}/pdf-view`;
+    this.sanitizedPdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);  
+    this.pdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    this.showPdfPopup = true;
+      
   }
+
+
   
   closePdfPopup(): void {
     this.showPdfPopup = false;

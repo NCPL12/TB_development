@@ -28,7 +28,7 @@
             </tr>
           </thead>        
           <tbody>
-            <tr *ngFor="let record of filteredBillingHistory" [class.table-info]="highlightSearch(record)"  (click)="openPdfPopup(record.id)" style="cursor: pointer;">
+            <tr *ngFor="let record of filteredBillingHistory" [class.table-info]="highlightSearch(record)"  (click)="openPdfPopup(record.id, record.bill_name)" style="cursor: pointer;">
               <td>{{ record.id }}</td>
               <td>{{ record.bill_name }}</td>
               <td>{{ record.periods   }}</td>

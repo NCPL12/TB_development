@@ -1,12 +1,16 @@
 package ncpl.bms.reports.service;
 
 import com.itextpdf.io.font.PdfEncodings;
+import com.itextpdf.io.font.constants.StandardFonts;
+import com.itextpdf.io.image.ImageData;
+import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.borders.Border;
 import com.itextpdf.layout.element.*;
 import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.layout.properties.UnitValue;
@@ -14,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 import ncpl.bms.reports.model.dto.MonthlyKwhReportDTO;
 import ncpl.bms.reports.model.dto.ReportHistoryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -92,21 +97,59 @@ public class ManualFloorUsageService {
         try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             PdfWriter writer = new PdfWriter(out);
             PdfDocument pdf = new PdfDocument(writer);
-            Document doc = new Document(pdf);
+            Document document = new Document(pdf);
+
+            Paragraph companyName = new Paragraph("Vajram CMR One")
+                    .setFontSize(14)
+                    .setBold()
+                    .setMarginBottom(10)
+                    .setFixedPosition(30, pdf.getDefaultPageSize().getHeight() - 40, 200);
+            document.add(companyName);
 
             PdfFont font = PdfFontFactory.createFont("C:/Windows/Fonts/arial.ttf", PdfEncodings.IDENTITY_H);
-            doc.setFont(font);
+            document.setFont(font);
+
+            // Load and add logo
+            try {
+                ImageData logoData = ImageDataFactory.create(new ClassPathResource("static/images/logo1.png").getURL());
+                Image logo = new Image(logoData);
+                logo.scaleToFit(100, 100);
+                float pageWidth = pdf.getDefaultPageSize().getWidth();
+                float pageHeight = pdf.getDefaultPageSize().getHeight();
+                logo.setFixedPosition(pageWidth - logo.getImageScaledWidth() - 20, pageHeight - logo.getImageScaledHeight() - 10);
+                document.add(logo);
+            } catch (Exception e) {
+                throw new RuntimeException("Error loading logo image", e);
+            }
+//            PdfFont font = PdfFontFactory.createFont("C:/Windows/Fonts/arial.ttf", PdfEncodings.IDENTITY_H);
+            document.setFont(font);
 
             // Title
-            doc.add(new Paragraph("Floor Usage Report")
+            document.add(new Paragraph("Floor Usage Report")
                     .setFontSize(14)
                     .setBold()
                     .setTextAlignment(TextAlignment.CENTER));
 
             // Header
-            doc.add(new Paragraph("From: " + fromDate + "    To: " + toDate)
-                    .setFontSize(10).setTextAlignment(TextAlignment.LEFT));
-            doc.add(new Paragraph("Generated On: " + LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")))
+            Table singleLine = new Table(UnitValue.createPercentArray(new float[]{1, 1}))
+                    .setWidth(UnitValue.createPercentValue(100))
+                    .setMarginBottom(10);
+
+// Left-aligned "From"
+            singleLine.addCell(new Cell()
+                    .add(new Paragraph("From: " + fromDate).setFontSize(10))
+                    .setTextAlignment(TextAlignment.LEFT)
+                    .setBorder(Border.NO_BORDER));
+
+// Right-aligned "To"
+            singleLine.addCell(new Cell()
+                    .add(new Paragraph("To: " + toDate).setFontSize(10))
+                    .setTextAlignment(TextAlignment.RIGHT)
+                    .setBorder(Border.NO_BORDER));
+
+            document.add(singleLine);
+
+            document.add(new Paragraph("Generated On: " + LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")))
                     .setFontSize(10).setTextAlignment(TextAlignment.LEFT));
 
             // Table
@@ -124,8 +167,25 @@ public class ManualFloorUsageService {
                         .setTextAlignment(TextAlignment.RIGHT));
             }
 
-            doc.add(table);
-            doc.close();
+            document.add(table);
+            // Get page width and bottom margin
+            float pageWidth = pdf.getDefaultPageSize().getWidth();
+            float bottomMargin = 15;  // Space from the bottom of the page
+            float rightMargin = 30;  // Space from the right edge
+
+            PdfFont italicFont = PdfFontFactory.createFont(StandardFonts.HELVETICA_OBLIQUE);
+
+            // Create footer paragraph
+            Paragraph footer = new Paragraph("Report generated by Neptune Control Pvt Ltd")
+                    .setFont(italicFont)  // Set italic font
+                    .setFontSize(8)
+                    .setTextAlignment(TextAlignment.RIGHT) // Align text to the right
+                    .setFixedPosition(pageWidth - rightMargin - 180, bottomMargin, 180);  // Adjusted for perfect alignment
+
+            // Add the footer to the document
+            document.add(footer);
+
+            document.close();
             return out.toByteArray();
         } catch (Exception e) {
             throw new RuntimeException("PDF generation failed", e);

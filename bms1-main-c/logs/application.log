@@ -1,348 +1,563 @@
-2025-05-03T09:52:16.167+05:30  INFO 18476 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 18476 (C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c)
-2025-05-03T09:52:16.182+05:30 DEBUG 18476 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
-2025-05-03T09:52:16.184+05:30  INFO 18476 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
-2025-05-03T09:52:16.307+05:30  INFO 18476 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-05-03T09:52:16.308+05:30  INFO 18476 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-05-03T09:52:17.597+05:30  INFO 18476 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-03T09:52:17.636+05:30  INFO 18476 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 JPA repository interfaces.
-2025-05-03T09:52:18.811+05:30  INFO 18476 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2025-05-03T09:52:18.824+05:30  INFO 18476 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-03T09:52:18.824+05:30  INFO 18476 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2025-05-03T09:52:18.934+05:30  INFO 18476 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
-2025-05-03T09:52:18.935+05:30  INFO 18476 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2627 ms
-2025-05-03T09:52:19.201+05:30  INFO 18476 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-03T09:52:19.290+05:30  INFO 18476 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-03T09:52:19.343+05:30  INFO 18476 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-03T09:52:19.681+05:30  INFO 18476 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-03T09:52:19.720+05:30  INFO 18476 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-03T09:52:20.044+05:30  INFO 18476 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 524d25f4-305e-48a6-8e35-cd360d93e5c2
-2025-05-03T09:52:20.045+05:30  INFO 18476 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-03T09:52:20.556+05:30  INFO 18476 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-03T09:52:20.562+05:30  INFO 18476 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-03T09:52:20.929+05:30  WARN 18476 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-03T09:52:22.522+05:30  INFO 18476 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-05-03T09:52:22.575+05:30  INFO 18476 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
-2025-05-03T09:52:22.595+05:30  INFO 18476 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 7.095 seconds (process running for 8.119)
-2025-05-03T09:53:00.042+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T09:54:00.023+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T09:55:00.021+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T09:56:00.255+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T09:56:41.929+05:30  INFO 18476 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-03T09:56:41.931+05:30  INFO 18476 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-03T09:56:41.933+05:30  INFO 18476 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-05-03T09:57:00.027+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T09:58:00.013+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T09:59:00.019+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:00:00.150+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:01:00.012+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:02:00.019+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:03:00.019+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:04:00.018+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:05:00.008+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:06:00.025+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:07:00.008+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:08:00.019+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:09:00.029+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:10:00.012+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:11:00.019+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:12:00.018+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:13:00.014+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:14:00.027+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:15:00.011+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:16:00.010+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:16:28.679+05:30  WARN 18476 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /bms-reports/v1/all-floor-energy-meters
-2025-05-03T10:16:28.703+05:30  WARN 18476 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /bms-reports/v1/all-floor-energy-meters.]
-2025-05-03T10:17:00.030+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:18:00.011+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:19:00.015+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:20:00.008+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:21:00.015+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:22:00.021+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:23:00.020+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:24:00.061+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:25:00.023+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:26:00.015+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:27:00.026+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:28:00.018+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:29:00.015+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:30:00.021+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:31:00.014+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:32:00.020+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:33:00.007+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:34:00.023+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:35:00.025+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:36:00.014+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:37:00.018+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:38:00.019+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:39:00.016+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:40:00.015+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:41:00.012+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:42:00.008+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:43:00.030+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:44:00.016+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:45:00.029+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:46:00.013+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:47:00.019+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:48:00.026+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:49:00.020+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:50:00.029+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:51:00.023+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:52:00.023+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:53:00.024+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:54:00.019+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:55:00.007+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:56:00.017+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:57:00.017+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:58:00.022+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T10:59:00.020+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:00:00.016+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:01:00.014+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:02:00.009+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:03:00.008+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:04:00.017+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:05:00.024+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:06:00.030+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:07:00.021+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:08:00.023+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:09:00.025+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:10:00.013+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:11:00.018+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:12:00.030+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:13:00.005+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:14:00.017+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:15:00.019+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:16:00.012+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:17:00.015+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:18:00.017+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:19:00.028+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:20:00.015+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:21:00.022+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:22:00.027+05:30  INFO 18476 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:22:54.553+05:30  INFO 18476 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-03T11:22:54.564+05:30  INFO 18476 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-03T11:22:54.569+05:30  INFO 18476 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-03T11:23:02.016+05:30  INFO 3280 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 3280 (C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c)
-2025-05-03T11:23:02.021+05:30 DEBUG 3280 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
-2025-05-03T11:23:02.022+05:30  INFO 3280 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
-2025-05-03T11:23:02.143+05:30  INFO 3280 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-05-03T11:23:02.144+05:30  INFO 3280 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-05-03T11:23:03.499+05:30  INFO 3280 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-03T11:23:03.553+05:30  INFO 3280 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 0 JPA repository interfaces.
-2025-05-03T11:23:04.878+05:30  INFO 3280 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2025-05-03T11:23:04.892+05:30  INFO 3280 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-03T11:23:04.893+05:30  INFO 3280 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2025-05-03T11:23:05.045+05:30  INFO 3280 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
-2025-05-03T11:23:05.045+05:30  INFO 3280 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2900 ms
-2025-05-03T11:23:05.392+05:30  INFO 3280 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-03T11:23:05.507+05:30  INFO 3280 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-03T11:23:05.579+05:30  INFO 3280 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-03T11:23:06.021+05:30  INFO 3280 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-03T11:23:06.060+05:30  INFO 3280 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-03T11:23:06.396+05:30  INFO 3280 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 93027be1-5e5a-4e5a-8220-cd4dd1efa59c
-2025-05-03T11:23:06.399+05:30  INFO 3280 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-03T11:23:06.969+05:30  INFO 3280 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-03T11:23:06.978+05:30  INFO 3280 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-03T11:23:07.382+05:30  WARN 3280 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-03T11:23:09.088+05:30  INFO 3280 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-05-03T11:23:09.147+05:30  INFO 3280 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
-2025-05-03T11:23:09.171+05:30  INFO 3280 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 8.017 seconds (process running for 9.126)
-2025-05-03T11:23:31.146+05:30  INFO 3280 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-03T11:23:31.153+05:30  INFO 3280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-03T11:23:31.158+05:30  INFO 3280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-03T11:23:36.410+05:30  INFO 1252 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 1252 (C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c)
-2025-05-03T11:23:36.413+05:30 DEBUG 1252 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
-2025-05-03T11:23:36.415+05:30  INFO 1252 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
-2025-05-03T11:23:36.557+05:30  INFO 1252 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-05-03T11:23:36.557+05:30  INFO 1252 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-05-03T11:23:37.727+05:30  INFO 1252 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-03T11:23:37.768+05:30  INFO 1252 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 0 JPA repository interfaces.
-2025-05-03T11:23:39.027+05:30  INFO 1252 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2025-05-03T11:23:39.040+05:30  INFO 1252 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-03T11:23:39.041+05:30  INFO 1252 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2025-05-03T11:23:39.139+05:30  INFO 1252 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
-2025-05-03T11:23:39.139+05:30  INFO 1252 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2580 ms
-2025-05-03T11:23:39.443+05:30  INFO 1252 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-03T11:23:39.534+05:30  INFO 1252 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-03T11:23:39.590+05:30  INFO 1252 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-03T11:23:39.927+05:30  INFO 1252 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-03T11:23:39.965+05:30  INFO 1252 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-03T11:23:40.329+05:30  INFO 1252 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: a2d924b6-3b9a-4ed0-8580-e052f166ef3a
-2025-05-03T11:23:40.331+05:30  INFO 1252 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-03T11:23:40.887+05:30  INFO 1252 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-03T11:23:40.894+05:30  INFO 1252 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-03T11:23:41.292+05:30  WARN 1252 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-03T11:23:42.912+05:30  INFO 1252 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-05-03T11:23:42.959+05:30  INFO 1252 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
-2025-05-03T11:23:42.992+05:30  INFO 1252 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 7.392 seconds (process running for 8.203)
-2025-05-03T11:24:00.038+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:24:08.465+05:30  INFO 1252 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-03T11:24:08.465+05:30  INFO 1252 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-03T11:24:08.468+05:30  INFO 1252 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-05-03T11:25:00.010+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:26:00.011+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:27:00.011+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:28:00.008+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:28:36.091+05:30  WARN 1252 --- [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /bms-reports/v1/%20-energy-meter-names
-2025-05-03T11:28:36.133+05:30  WARN 1252 --- [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /bms-reports/v1/%20-energy-meter-names.]
-2025-05-03T11:29:00.017+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:29:47.638+05:30  WARN 1252 --- [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /bms-reports/v1/floor-energy-meter/all-active-energy-meters
-2025-05-03T11:29:47.642+05:30  WARN 1252 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /bms-reports/v1/floor-energy-meter/all-active-energy-meters.]
-2025-05-03T11:30:00.037+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:31:00.021+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:32:00.024+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:33:00.020+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:34:00.009+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:35:00.018+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:36:00.015+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:37:00.026+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:38:00.007+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:39:00.031+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:40:00.045+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:41:00.023+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:42:00.007+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:43:00.021+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:44:00.015+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:45:00.029+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:46:00.024+05:30  INFO 1252 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:46:26.513+05:30  INFO 1252 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-03T11:46:26.520+05:30  INFO 1252 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-03T11:46:26.523+05:30  INFO 1252 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-03T11:49:26.222+05:30  INFO 14844 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 14844 (C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c)
-2025-05-03T11:49:26.226+05:30 DEBUG 14844 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
-2025-05-03T11:49:26.228+05:30  INFO 14844 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
-2025-05-03T11:49:26.379+05:30  INFO 14844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-05-03T11:49:26.380+05:30  INFO 14844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-05-03T11:49:27.644+05:30  INFO 14844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-03T11:49:27.688+05:30  INFO 14844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 0 JPA repository interfaces.
-2025-05-03T11:49:28.776+05:30  INFO 14844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2025-05-03T11:49:28.787+05:30  INFO 14844 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-03T11:49:28.787+05:30  INFO 14844 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2025-05-03T11:49:28.881+05:30  INFO 14844 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
-2025-05-03T11:49:28.883+05:30  INFO 14844 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2502 ms
-2025-05-03T11:49:29.162+05:30  INFO 14844 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-03T11:49:29.239+05:30  INFO 14844 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-03T11:49:29.301+05:30  INFO 14844 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-03T11:49:29.687+05:30  INFO 14844 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-03T11:49:29.725+05:30  INFO 14844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-03T11:49:30.002+05:30  INFO 14844 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 874602e5-d986-46f2-adc6-b8e0c9e2a5d6
-2025-05-03T11:49:30.004+05:30  INFO 14844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-03T11:49:30.545+05:30  INFO 14844 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-03T11:49:30.553+05:30  INFO 14844 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-03T11:49:30.987+05:30  WARN 14844 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-03T11:49:32.639+05:30  INFO 14844 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-05-03T11:49:32.695+05:30  INFO 14844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
-2025-05-03T11:49:32.714+05:30  INFO 14844 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 7.17 seconds (process running for 7.969)
-2025-05-03T11:49:48.005+05:30  INFO 14844 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-03T11:49:48.005+05:30  INFO 14844 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-03T11:49:48.008+05:30  INFO 14844 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-05-03T11:50:00.040+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:51:00.011+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:51:41.191+05:30  WARN 14844 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /bms-reports/v1floor-energy-meter/get-all
-2025-05-03T11:51:41.261+05:30  WARN 14844 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /bms-reports/v1floor-energy-meter/get-all.]
-2025-05-03T11:52:00.026+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:53:00.025+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:54:00.027+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:55:00.021+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:56:00.038+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:57:00.033+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:58:00.031+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T11:59:00.028+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:00:00.018+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:01:00.017+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:02:00.023+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:03:00.017+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:04:00.019+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:05:00.023+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:06:00.023+05:30  INFO 14844 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:06:23.110+05:30  INFO 14844 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-03T12:06:23.117+05:30  INFO 14844 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-03T12:06:23.121+05:30  INFO 14844 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-03T12:06:28.691+05:30  INFO 25160 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 25160 (C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c)
-2025-05-03T12:06:28.694+05:30 DEBUG 25160 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
-2025-05-03T12:06:28.696+05:30  INFO 25160 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
-2025-05-03T12:06:28.840+05:30  INFO 25160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-05-03T12:06:28.842+05:30  INFO 25160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-05-03T12:06:30.008+05:30  INFO 25160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-03T12:06:30.055+05:30  INFO 25160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 0 JPA repository interfaces.
-2025-05-03T12:06:31.214+05:30  INFO 25160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2025-05-03T12:06:31.225+05:30  INFO 25160 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-03T12:06:31.225+05:30  INFO 25160 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2025-05-03T12:06:31.340+05:30  INFO 25160 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
-2025-05-03T12:06:31.341+05:30  INFO 25160 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2498 ms
-2025-05-03T12:06:31.641+05:30  INFO 25160 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-03T12:06:31.732+05:30  INFO 25160 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-03T12:06:31.783+05:30  INFO 25160 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-03T12:06:32.175+05:30  INFO 25160 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-03T12:06:32.212+05:30  INFO 25160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-03T12:06:32.530+05:30  INFO 25160 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: a870cc36-6e44-475c-81e7-db40ccf0426a
-2025-05-03T12:06:32.533+05:30  INFO 25160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-03T12:06:33.077+05:30  INFO 25160 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-03T12:06:33.085+05:30  INFO 25160 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-03T12:06:33.509+05:30  WARN 25160 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-03T12:06:35.342+05:30  INFO 25160 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-05-03T12:06:35.389+05:30  INFO 25160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
-2025-05-03T12:06:35.414+05:30  INFO 25160 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 7.44 seconds (process running for 8.245)
-2025-05-03T12:06:39.350+05:30  INFO 25160 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-03T12:06:39.351+05:30  INFO 25160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-03T12:06:39.352+05:30  INFO 25160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-05-03T12:07:00.008+05:30  INFO 25160 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:07:44.286+05:30  WARN 25160 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /bms-reports/v1available-energy-meter-names
-2025-05-03T12:07:44.370+05:30  WARN 25160 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /bms-reports/v1available-energy-meter-names.]
-2025-05-03T12:08:00.025+05:30  INFO 25160 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:09:00.011+05:30  INFO 25160 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:09:18.257+05:30  INFO 25160 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-03T12:09:18.270+05:30  INFO 25160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-03T12:09:18.276+05:30  INFO 25160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-03T12:09:27.394+05:30  INFO 14856 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 14856 (C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\KWH REPORT GENERATION\bms1-main-c)
-2025-05-03T12:09:27.398+05:30 DEBUG 14856 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
-2025-05-03T12:09:27.401+05:30  INFO 14856 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
-2025-05-03T12:09:27.604+05:30  INFO 14856 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-05-03T12:09:27.605+05:30  INFO 14856 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-05-03T12:09:29.771+05:30  INFO 14856 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-03T12:09:29.825+05:30  INFO 14856 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 0 JPA repository interfaces.
-2025-05-03T12:09:32.295+05:30  INFO 14856 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2025-05-03T12:09:32.343+05:30  INFO 14856 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-03T12:09:32.345+05:30  INFO 14856 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2025-05-03T12:09:32.632+05:30  INFO 14856 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
-2025-05-03T12:09:32.634+05:30  INFO 14856 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5027 ms
-2025-05-03T12:09:33.120+05:30  INFO 14856 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-03T12:09:33.304+05:30  INFO 14856 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-05-03T12:09:33.402+05:30  INFO 14856 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-03T12:09:34.102+05:30  INFO 14856 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-03T12:09:34.180+05:30  INFO 14856 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-03T12:09:35.051+05:30  INFO 14856 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 0022918f-0a8e-4a58-8451-74e71736f723
-2025-05-03T12:09:35.055+05:30  INFO 14856 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-03T12:09:36.231+05:30  INFO 14856 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-03T12:09:36.248+05:30  INFO 14856 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-03T12:09:36.912+05:30  WARN 14856 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-03T12:09:39.633+05:30  INFO 14856 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-05-03T12:09:39.697+05:30  INFO 14856 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
-2025-05-03T12:09:39.729+05:30  INFO 14856 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 13.47 seconds (process running for 15.066)
-2025-05-03T12:10:00.037+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:10:20.395+05:30  INFO 14856 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-03T12:10:20.396+05:30  INFO 14856 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-03T12:10:20.400+05:30  INFO 14856 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2025-05-03T12:10:54.377+05:30  WARN 14856 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /bms-reports/v1/floor-energy-meter/get-all-floors
-2025-05-03T12:10:54.436+05:30  WARN 14856 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /bms-reports/v1/floor-energy-meter/get-all-floors.]
-2025-05-03T12:11:00.034+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:12:00.023+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:13:00.035+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:14:00.011+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:15:00.034+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:16:00.017+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:17:00.010+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:18:00.031+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:19:00.023+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:20:00.027+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:21:00.011+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:22:00.027+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:23:00.024+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:24:00.017+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:25:00.028+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:26:00.023+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:27:00.014+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:28:00.024+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:29:00.025+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:30:00.024+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:31:00.015+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
-2025-05-03T12:32:00.028+05:30  INFO 14856 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:01:12.276+05:30  INFO 3236 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 3236 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T11:01:12.293+05:30 DEBUG 3236 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T11:01:12.295+05:30  INFO 3236 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T11:01:12.472+05:30  INFO 3236 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T11:01:12.473+05:30  INFO 3236 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T11:01:14.488+05:30  INFO 3236 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T11:01:14.557+05:30  INFO 3236 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 0 JPA repository interfaces.
+2025-05-09T11:01:17.117+05:30  INFO 3236 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T11:01:17.164+05:30  INFO 3236 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T11:01:17.165+05:30  INFO 3236 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T11:01:17.368+05:30  INFO 3236 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T11:01:17.369+05:30  INFO 3236 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4894 ms
+2025-05-09T11:01:17.779+05:30  INFO 3236 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T11:01:18.184+05:30  INFO 3236 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T11:01:18.315+05:30  INFO 3236 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T11:01:19.023+05:30  INFO 3236 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T11:01:19.086+05:30  INFO 3236 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T11:01:19.775+05:30  INFO 3236 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 60415f68-ab18-4597-9d5b-24a296703e65
+2025-05-09T11:01:19.776+05:30  INFO 3236 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T11:01:20.889+05:30  INFO 3236 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T11:01:20.901+05:30  INFO 3236 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T11:01:21.575+05:30  WARN 3236 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T11:01:24.400+05:30  INFO 3236 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T11:01:24.462+05:30  INFO 3236 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T11:01:24.487+05:30  INFO 3236 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 13.236 seconds (process running for 14.7)
+2025-05-09T11:02:00.079+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:02:02.778+05:30  INFO 3236 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T11:02:02.779+05:30  INFO 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T11:02:02.782+05:30  INFO 3236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-09T11:03:00.020+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:04:00.030+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:05:00.019+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:06:00.021+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:07:00.013+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:08:00.030+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:09:00.021+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:10:00.022+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:11:00.027+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:12:00.022+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:13:00.023+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:14:00.036+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:15:00.016+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:16:00.022+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:17:00.036+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:18:00.034+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:19:00.036+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:20:00.028+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:21:00.025+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:22:00.024+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:23:00.027+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:24:00.014+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:25:00.015+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:26:00.014+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:27:00.016+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:28:00.016+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:29:00.016+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:30:00.023+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:31:00.012+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:32:00.030+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:33:00.019+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:34:00.019+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:35:00.027+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:36:00.019+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:37:00.014+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:38:00.021+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:39:00.014+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:40:00.050+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:41:00.011+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:42:00.017+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:43:00.014+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:44:00.021+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:45:00.022+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:46:00.015+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:47:00.014+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:48:00.011+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:49:00.029+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:50:00.028+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:51:00.029+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:52:00.015+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:53:00.033+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:54:00.027+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:55:00.026+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:55:03.946+05:30  WARN 3236 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler ncpl.bms.reports.exception.GlobalExceptionHandler#handleSecurityException(Exception)
+
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: An established connection was aborted by the software in your host machine
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:267) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:120) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.io.FilterOutputStream.flush(FilterOutputStream.java:153) ~[na:na]
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1200) ~[jackson-core-2.15.3.jar:2.15.3]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1063) ~[jackson-databind-2.15.3.jar:2.15.3]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:483) ~[spring-web-6.0.15.jar:6.0.15]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:103) ~[spring-web-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:297) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:245) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78) ~[spring-web-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:136) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:413) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1341) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1152) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.17.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.15.jar:6.0.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.17.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.15.jar:6.0.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.15.jar:6.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.15.jar:6.0.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.15.jar:6.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.15.jar:6.0.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.15.jar:6.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+Caused by: java.io.IOException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:54) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:132) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:97) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:53) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:532) ~[na:na]
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:118) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1381) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:764) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:728) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:712) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:566) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:157) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:220) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1245) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:400) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.coyote.Response.action(Response.java:208) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:301) ~[tomcat-embed-core-10.1.17.jar:10.1.17]
+	... 57 common frames omitted
+
+2025-05-09T11:56:00.011+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:57:00.024+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:58:00.025+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T11:59:00.022+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:00:00.017+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:01:00.021+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:02:06.518+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:03:00.021+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:04:00.042+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:05:00.021+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:06:00.020+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:07:00.020+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:08:00.026+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:09:00.019+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:10:00.012+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:11:00.040+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:12:00.024+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:13:00.018+05:30  INFO 3236 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:13:30.951+05:30  INFO 3236 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:13:30.963+05:30  INFO 3236 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-09T12:13:30.966+05:30  INFO 3236 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-09T12:13:40.784+05:30  INFO 25164 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 25164 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T12:13:40.788+05:30 DEBUG 25164 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T12:13:40.790+05:30  INFO 25164 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T12:13:41.027+05:30  INFO 25164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T12:13:41.027+05:30  INFO 25164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T12:13:43.067+05:30  INFO 25164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T12:13:43.134+05:30  INFO 25164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 0 JPA repository interfaces.
+2025-05-09T12:13:44.264+05:30  INFO 25164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T12:13:44.277+05:30  INFO 25164 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T12:13:44.277+05:30  INFO 25164 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T12:13:44.375+05:30  INFO 25164 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T12:13:44.376+05:30  INFO 25164 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3347 ms
+2025-05-09T12:13:44.646+05:30  INFO 25164 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T12:13:44.743+05:30  INFO 25164 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T12:13:44.795+05:30  INFO 25164 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T12:13:45.129+05:30  INFO 25164 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T12:13:45.165+05:30  INFO 25164 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T12:13:45.512+05:30  INFO 25164 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: ceef4b64-87a4-488c-a240-977c92c49432
+2025-05-09T12:13:45.514+05:30  INFO 25164 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T12:13:46.063+05:30  INFO 25164 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T12:13:46.069+05:30  INFO 25164 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:13:46.521+05:30  WARN 25164 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T12:13:48.021+05:30  INFO 25164 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T12:13:48.065+05:30  INFO 25164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T12:13:48.085+05:30  INFO 25164 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 8.106 seconds (process running for 9.251)
+2025-05-09T12:13:57.486+05:30  INFO 25164 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T12:13:57.486+05:30  INFO 25164 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T12:13:57.488+05:30  INFO 25164 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-09T12:14:00.024+05:30  INFO 25164 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:15:00.026+05:30  INFO 25164 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:16:00.013+05:30  INFO 25164 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:16:20.854+05:30  INFO 25164 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:16:20.861+05:30  INFO 25164 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-09T12:16:20.864+05:30  INFO 25164 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-09T12:16:27.317+05:30  INFO 19288 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 19288 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T12:16:27.322+05:30 DEBUG 19288 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T12:16:27.324+05:30  INFO 19288 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T12:16:27.475+05:30  INFO 19288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T12:16:27.476+05:30  INFO 19288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T12:16:29.459+05:30  INFO 19288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T12:16:29.505+05:30  INFO 19288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 0 JPA repository interfaces.
+2025-05-09T12:16:30.964+05:30  INFO 19288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T12:16:30.979+05:30  INFO 19288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T12:16:30.980+05:30  INFO 19288 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T12:16:31.112+05:30  INFO 19288 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T12:16:31.112+05:30  INFO 19288 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3635 ms
+2025-05-09T12:16:31.664+05:30  INFO 19288 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T12:16:31.781+05:30  INFO 19288 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T12:16:31.860+05:30  INFO 19288 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T12:16:32.282+05:30  INFO 19288 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T12:16:32.326+05:30  INFO 19288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T12:16:32.728+05:30  INFO 19288 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 62161d3d-699d-45f2-9ee3-e845fb7d7d7e
+2025-05-09T12:16:32.730+05:30  INFO 19288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T12:16:33.311+05:30  INFO 19288 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T12:16:33.320+05:30  INFO 19288 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:16:33.735+05:30  WARN 19288 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T12:16:35.548+05:30  INFO 19288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T12:16:35.598+05:30  INFO 19288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T12:16:35.623+05:30  INFO 19288 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 9.137 seconds (process running for 10.089)
+2025-05-09T12:16:45.239+05:30  INFO 19288 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T12:16:45.239+05:30  INFO 19288 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T12:16:45.240+05:30  INFO 19288 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-09T12:17:00.036+05:30  INFO 19288 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:18:00.021+05:30  INFO 19288 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:18:00.533+05:30  INFO 19288 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:18:00.540+05:30  INFO 19288 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-09T12:18:00.543+05:30  INFO 19288 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-09T12:18:05.792+05:30  INFO 10996 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 10996 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T12:18:05.795+05:30 DEBUG 10996 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T12:18:05.797+05:30  INFO 10996 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T12:18:05.952+05:30  INFO 10996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T12:18:05.952+05:30  INFO 10996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T12:18:07.057+05:30  INFO 10996 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T12:18:07.091+05:30  INFO 10996 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 JPA repository interfaces.
+2025-05-09T12:18:08.271+05:30  INFO 10996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T12:18:08.282+05:30  INFO 10996 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T12:18:08.282+05:30  INFO 10996 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T12:18:08.388+05:30  INFO 10996 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T12:18:08.390+05:30  INFO 10996 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2437 ms
+2025-05-09T12:18:08.692+05:30  INFO 10996 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T12:18:08.813+05:30  INFO 10996 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T12:18:08.871+05:30  INFO 10996 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T12:18:09.226+05:30  INFO 10996 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T12:18:09.260+05:30  INFO 10996 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T12:18:09.600+05:30  INFO 10996 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 868f0746-af9e-4f60-a074-5efc6cdcd01b
+2025-05-09T12:18:09.602+05:30  INFO 10996 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T12:18:10.163+05:30  INFO 10996 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T12:18:10.171+05:30  INFO 10996 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:18:10.567+05:30  WARN 10996 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T12:18:12.120+05:30  INFO 10996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T12:18:12.173+05:30  INFO 10996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T12:18:12.191+05:30  INFO 10996 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 7.061 seconds (process running for 8.17)
+2025-05-09T12:18:38.658+05:30  INFO 10996 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T12:18:38.658+05:30  INFO 10996 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T12:18:38.660+05:30  INFO 10996 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-09T12:19:00.023+05:30  INFO 10996 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:20:00.008+05:30  INFO 10996 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:21:00.027+05:30  INFO 10996 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:22:00.023+05:30  INFO 10996 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:23:00.023+05:30  INFO 10996 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:24:00.032+05:30  INFO 10996 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:24:16.930+05:30  INFO 10996 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:24:16.937+05:30  INFO 10996 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-09T12:24:16.941+05:30  INFO 10996 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-09T12:24:23.704+05:30  INFO 3728 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 3728 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T12:24:23.707+05:30 DEBUG 3728 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T12:24:23.709+05:30  INFO 3728 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T12:24:23.834+05:30  INFO 3728 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T12:24:23.834+05:30  INFO 3728 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T12:24:24.956+05:30  INFO 3728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T12:24:24.989+05:30  INFO 3728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JPA repository interfaces.
+2025-05-09T12:24:26.157+05:30  INFO 3728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T12:24:26.170+05:30  INFO 3728 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T12:24:26.170+05:30  INFO 3728 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T12:24:26.286+05:30  INFO 3728 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T12:24:26.286+05:30  INFO 3728 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2452 ms
+2025-05-09T12:24:26.545+05:30  INFO 3728 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T12:24:26.653+05:30  INFO 3728 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T12:24:26.705+05:30  INFO 3728 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T12:24:27.077+05:30  INFO 3728 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T12:24:27.110+05:30  INFO 3728 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T12:24:27.430+05:30  INFO 3728 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: a343a2e4-b0b4-41fd-af55-2c94e12a8097
+2025-05-09T12:24:27.431+05:30  INFO 3728 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T12:24:28.017+05:30  INFO 3728 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T12:24:28.025+05:30  INFO 3728 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:24:28.430+05:30  WARN 3728 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T12:24:30.399+05:30  INFO 3728 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T12:24:30.449+05:30  INFO 3728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T12:24:30.475+05:30  INFO 3728 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 7.453 seconds (process running for 8.474)
+2025-05-09T12:24:31.337+05:30  INFO 3728 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T12:24:31.337+05:30  INFO 3728 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T12:24:31.341+05:30  INFO 3728 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-09T12:24:41.649+05:30  WARN 3728 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: PDF generation failed]
+2025-05-09T12:25:00.025+05:30  INFO 3728 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:25:07.277+05:30  WARN 3728 --- [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: PDF generation failed]
+2025-05-09T12:25:56.596+05:30  INFO 3728 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:25:56.603+05:30  INFO 3728 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-09T12:25:56.607+05:30  INFO 3728 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-09T12:26:03.419+05:30  INFO 15092 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 15092 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T12:26:03.423+05:30 DEBUG 15092 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T12:26:03.425+05:30  INFO 15092 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T12:26:03.564+05:30  INFO 15092 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T12:26:03.565+05:30  INFO 15092 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T12:26:05.081+05:30  INFO 15092 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T12:26:05.128+05:30  INFO 15092 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 JPA repository interfaces.
+2025-05-09T12:26:06.849+05:30  INFO 15092 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T12:26:06.864+05:30  INFO 15092 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T12:26:06.864+05:30  INFO 15092 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T12:26:07.046+05:30  INFO 15092 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T12:26:07.047+05:30  INFO 15092 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3481 ms
+2025-05-09T12:26:07.531+05:30  INFO 15092 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T12:26:07.668+05:30  INFO 15092 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T12:26:07.795+05:30  INFO 15092 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T12:26:08.425+05:30  INFO 15092 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T12:26:08.471+05:30  INFO 15092 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T12:26:08.919+05:30  INFO 15092 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: d04142f8-5e77-4a82-849c-6b8a62fbf8dc
+2025-05-09T12:26:08.921+05:30  INFO 15092 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T12:26:09.515+05:30  INFO 15092 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T12:26:09.524+05:30  INFO 15092 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:26:09.984+05:30  WARN 15092 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T12:26:11.519+05:30  INFO 15092 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T12:26:11.561+05:30  INFO 15092 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T12:26:11.579+05:30  INFO 15092 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 9.274 seconds (process running for 10.206)
+2025-05-09T12:26:14.218+05:30  INFO 15092 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T12:26:14.218+05:30  INFO 15092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T12:26:14.219+05:30  INFO 15092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-09T12:27:00.025+05:30  INFO 15092 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:27:52.910+05:30  INFO 15092 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:27:52.917+05:30  INFO 15092 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-09T12:27:52.921+05:30  INFO 15092 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-09T12:27:58.337+05:30  INFO 23992 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 23992 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T12:27:58.341+05:30 DEBUG 23992 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T12:27:58.343+05:30  INFO 23992 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T12:27:58.482+05:30  INFO 23992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T12:27:58.484+05:30  INFO 23992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T12:27:59.711+05:30  INFO 23992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T12:27:59.742+05:30  INFO 23992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JPA repository interfaces.
+2025-05-09T12:28:00.881+05:30  INFO 23992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T12:28:00.892+05:30  INFO 23992 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T12:28:00.893+05:30  INFO 23992 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T12:28:01.000+05:30  INFO 23992 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T12:28:01.001+05:30  INFO 23992 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2515 ms
+2025-05-09T12:28:01.386+05:30  INFO 23992 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T12:28:01.493+05:30  INFO 23992 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T12:28:01.551+05:30  INFO 23992 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T12:28:01.878+05:30  INFO 23992 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T12:28:01.917+05:30  INFO 23992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T12:28:02.280+05:30  INFO 23992 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 2d847874-1cec-4766-958e-89ec2a74ad0e
+2025-05-09T12:28:02.282+05:30  INFO 23992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T12:28:02.818+05:30  INFO 23992 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T12:28:02.825+05:30  INFO 23992 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:28:03.223+05:30  WARN 23992 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T12:28:04.882+05:30  INFO 23992 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T12:28:04.931+05:30  INFO 23992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T12:28:04.957+05:30  INFO 23992 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 7.344 seconds (process running for 8.174)
+2025-05-09T12:28:09.738+05:30  INFO 23992 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T12:28:09.738+05:30  INFO 23992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T12:28:09.741+05:30  INFO 23992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-05-09T12:29:00.019+05:30  INFO 23992 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:29:31.369+05:30  INFO 23992 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:29:31.378+05:30  INFO 23992 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-09T12:29:31.383+05:30  INFO 23992 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-09T12:29:36.438+05:30  INFO 4772 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 4772 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T12:29:36.441+05:30 DEBUG 4772 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T12:29:36.444+05:30  INFO 4772 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T12:29:36.581+05:30  INFO 4772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T12:29:36.581+05:30  INFO 4772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T12:29:37.719+05:30  INFO 4772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T12:29:37.752+05:30  INFO 4772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JPA repository interfaces.
+2025-05-09T12:29:38.774+05:30  INFO 4772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T12:29:38.789+05:30  INFO 4772 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T12:29:38.789+05:30  INFO 4772 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T12:29:38.882+05:30  INFO 4772 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T12:29:38.882+05:30  INFO 4772 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2300 ms
+2025-05-09T12:29:39.140+05:30  INFO 4772 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T12:29:39.220+05:30  INFO 4772 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T12:29:39.272+05:30  INFO 4772 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T12:29:39.558+05:30  INFO 4772 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T12:29:39.594+05:30  INFO 4772 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T12:29:39.885+05:30  INFO 4772 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: e9462b1c-701a-4bd5-a9f4-f98f894e0943
+2025-05-09T12:29:39.886+05:30  INFO 4772 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T12:29:40.416+05:30  INFO 4772 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T12:29:40.424+05:30  INFO 4772 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:29:40.813+05:30  WARN 4772 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T12:29:42.263+05:30  INFO 4772 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T12:29:42.310+05:30  INFO 4772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T12:29:42.328+05:30  INFO 4772 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 6.535 seconds (process running for 7.368)
+2025-05-09T12:30:00.040+05:30  INFO 4772 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:30:54.943+05:30  INFO 4772 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T12:30:54.944+05:30  INFO 4772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T12:30:54.946+05:30  INFO 4772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-09T12:30:58.599+05:30  WARN 4772 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: PDF generation failed]
+2025-05-09T12:31:00.021+05:30  INFO 4772 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:31:32.456+05:30  WARN 4772 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: PDF generation failed]
+2025-05-09T12:31:36.450+05:30  INFO 4772 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:31:36.455+05:30  INFO 4772 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-09T12:31:36.460+05:30  INFO 4772 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-09T12:31:41.249+05:30  INFO 27636 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 27636 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T12:31:41.251+05:30 DEBUG 27636 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T12:31:41.254+05:30  INFO 27636 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T12:31:41.389+05:30  INFO 27636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T12:31:41.389+05:30  INFO 27636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T12:31:42.565+05:30  INFO 27636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T12:31:42.597+05:30  INFO 27636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JPA repository interfaces.
+2025-05-09T12:31:43.674+05:30  INFO 27636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T12:31:43.688+05:30  INFO 27636 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T12:31:43.689+05:30  INFO 27636 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T12:31:43.778+05:30  INFO 27636 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T12:31:43.779+05:30  INFO 27636 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2388 ms
+2025-05-09T12:31:44.050+05:30  INFO 27636 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T12:31:44.137+05:30  INFO 27636 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T12:31:44.189+05:30  INFO 27636 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T12:31:44.561+05:30  INFO 27636 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T12:31:44.594+05:30  INFO 27636 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T12:31:44.880+05:30  INFO 27636 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: bb795ee5-27cf-4512-8d8b-57232ae6e750
+2025-05-09T12:31:44.882+05:30  INFO 27636 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T12:31:45.443+05:30  INFO 27636 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T12:31:45.451+05:30  INFO 27636 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:31:45.832+05:30  WARN 27636 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T12:31:47.349+05:30  INFO 27636 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T12:31:47.395+05:30  INFO 27636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T12:31:47.424+05:30  INFO 27636 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 6.875 seconds (process running for 7.673)
+2025-05-09T12:31:56.632+05:30  INFO 27636 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T12:31:56.633+05:30  INFO 27636 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T12:31:56.634+05:30  INFO 27636 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-09T12:32:00.020+05:30  INFO 27636 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:33:00.022+05:30  INFO 27636 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:33:52.486+05:30  INFO 27636 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:33:52.494+05:30  INFO 27636 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-09T12:33:52.497+05:30  INFO 27636 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-09T12:33:57.388+05:30  INFO 24380 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 24380 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T12:33:57.392+05:30 DEBUG 24380 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T12:33:57.393+05:30  INFO 24380 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T12:33:57.531+05:30  INFO 24380 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T12:33:57.532+05:30  INFO 24380 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T12:33:58.674+05:30  INFO 24380 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T12:33:58.706+05:30  INFO 24380 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JPA repository interfaces.
+2025-05-09T12:33:59.742+05:30  INFO 24380 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T12:33:59.753+05:30  INFO 24380 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T12:33:59.753+05:30  INFO 24380 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T12:33:59.849+05:30  INFO 24380 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T12:33:59.849+05:30  INFO 24380 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2316 ms
+2025-05-09T12:34:00.102+05:30  INFO 24380 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T12:34:00.189+05:30  INFO 24380 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T12:34:00.239+05:30  INFO 24380 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T12:34:00.607+05:30  INFO 24380 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T12:34:00.644+05:30  INFO 24380 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T12:34:00.942+05:30  INFO 24380 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: b926a035-d3af-486d-9b2e-35ae9fddca2c
+2025-05-09T12:34:00.943+05:30  INFO 24380 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T12:34:01.466+05:30  INFO 24380 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T12:34:01.475+05:30  INFO 24380 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:34:01.846+05:30  WARN 24380 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T12:34:03.364+05:30  INFO 24380 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T12:34:03.411+05:30  INFO 24380 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T12:34:03.433+05:30  INFO 24380 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 6.729 seconds (process running for 7.499)
+2025-05-09T12:34:20.202+05:30  INFO 24380 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T12:34:20.202+05:30  INFO 24380 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T12:34:20.204+05:30  INFO 24380 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-09T12:35:00.020+05:30  INFO 24380 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:36:00.026+05:30  INFO 24380 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:36:11.133+05:30  INFO 24380 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:36:11.139+05:30  INFO 24380 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-09T12:36:11.144+05:30  INFO 24380 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-09T12:36:17.313+05:30  INFO 24272 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 24272 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T12:36:17.317+05:30 DEBUG 24272 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T12:36:17.318+05:30  INFO 24272 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T12:36:17.460+05:30  INFO 24272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T12:36:17.461+05:30  INFO 24272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T12:36:18.880+05:30  INFO 24272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T12:36:18.925+05:30  INFO 24272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 JPA repository interfaces.
+2025-05-09T12:36:20.650+05:30  INFO 24272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T12:36:20.670+05:30  INFO 24272 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T12:36:20.671+05:30  INFO 24272 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T12:36:20.816+05:30  INFO 24272 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T12:36:20.817+05:30  INFO 24272 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3355 ms
+2025-05-09T12:36:21.191+05:30  INFO 24272 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T12:36:21.303+05:30  INFO 24272 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T12:36:21.373+05:30  INFO 24272 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T12:36:21.723+05:30  INFO 24272 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T12:36:21.760+05:30  INFO 24272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T12:36:22.020+05:30  INFO 24272 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 75bb8b15-f45e-410f-98fa-fb08a004b1e2
+2025-05-09T12:36:22.022+05:30  INFO 24272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T12:36:22.576+05:30  INFO 24272 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T12:36:22.584+05:30  INFO 24272 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:36:22.987+05:30  WARN 24272 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T12:36:24.852+05:30  INFO 24272 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T12:36:24.903+05:30  INFO 24272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T12:36:24.926+05:30  INFO 24272 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 8.365 seconds (process running for 9.493)
+2025-05-09T12:36:26.448+05:30  INFO 24272 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T12:36:26.450+05:30  INFO 24272 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T12:36:26.451+05:30  INFO 24272 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-09T12:36:27.150+05:30  WARN 24272 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: PDF generation failed]
+2025-05-09T12:37:00.032+05:30  INFO 24272 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:38:00.017+05:30  INFO 24272 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:39:00.013+05:30  INFO 24272 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:40:00.016+05:30  INFO 24272 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:41:00.020+05:30  INFO 24272 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:42:00.021+05:30  INFO 24272 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:43:00.026+05:30  INFO 24272 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:44:00.021+05:30  INFO 24272 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:45:00.031+05:30  INFO 24272 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:45:54.527+05:30  INFO 24272 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:45:54.532+05:30  INFO 24272 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-09T12:45:54.536+05:30  INFO 24272 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-09T12:45:59.467+05:30  INFO 8980 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Starting BmsReportsApplication using Java 17.0.12 with PID 8980 (C:\Users\tekni\Desktop\git TB\bms1-main-c\bms-reports\target\classes started by NCPL-AST-11 in C:\Users\tekni\Desktop\git TB\bms1-main-c)
+2025-05-09T12:45:59.472+05:30 DEBUG 8980 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Running with Spring Boot v3.1.7, Spring v6.0.15
+2025-05-09T12:45:59.474+05:30  INFO 8980 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : The following 1 profile is active: "dev"
+2025-05-09T12:45:59.605+05:30  INFO 8980 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-09T12:45:59.605+05:30  INFO 8980 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-09T12:46:00.714+05:30  INFO 8980 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09T12:46:00.755+05:30  INFO 8980 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 JPA repository interfaces.
+2025-05-09T12:46:01.954+05:30  INFO 8980 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-09T12:46:01.968+05:30  INFO 8980 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-09T12:46:01.968+05:30  INFO 8980 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-05-09T12:46:02.068+05:30  INFO 8980 --- [restartedMain] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring embedded WebApplicationContext
+2025-05-09T12:46:02.069+05:30  INFO 8980 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2461 ms
+2025-05-09T12:46:02.309+05:30  INFO 8980 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09T12:46:02.391+05:30  INFO 8980 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-09T12:46:02.456+05:30  INFO 8980 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-09T12:46:02.768+05:30  INFO 8980 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09T12:46:02.798+05:30  INFO 8980 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-09T12:46:03.098+05:30  INFO 8980 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: d42117b3-e56e-4fcb-87df-adc734012b94
+2025-05-09T12:46:03.100+05:30  INFO 8980 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-09T12:46:03.583+05:30  INFO 8980 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09T12:46:03.591+05:30  INFO 8980 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09T12:46:03.945+05:30  WARN 8980 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09T12:46:05.454+05:30  INFO 8980 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-09T12:46:05.499+05:30  INFO 8980 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/bms-reports'
+2025-05-09T12:46:05.517+05:30  INFO 8980 --- [restartedMain] ncpl.bms.reports.BmsReportsApplication   : Started BmsReportsApplication in 6.668 seconds (process running for 7.447)
+2025-05-09T12:46:26.004+05:30  INFO 8980 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/bms-reports]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-09T12:46:26.004+05:30  INFO 8980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-09T12:46:26.007+05:30  INFO 8980 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-09T12:47:00.030+05:30  INFO 8980 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:48:00.030+05:30  INFO 8980 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:49:00.013+05:30  INFO 8980 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:50:00.009+05:30  INFO 8980 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:51:00.028+05:30  INFO 8980 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.
+2025-05-09T12:52:00.023+05:30  INFO 8980 --- [scheduling-1] n.b.r.s.ScheduledFloorReportService      : ❌ Neither scheduling nor email enabled. Skipping floor report generation.

@@ -21,6 +21,7 @@ export class AutomatedReportComponent implements OnInit {
   errorMessage = '';
   showPdfPopup = false;
   sanitizedPdfUrl: SafeResourceUrl | null = null;
+  pdfUrl: SafeResourceUrl | null = null;
 
   constructor(
     private http: HttpClient,
@@ -71,25 +72,16 @@ export class AutomatedReportComponent implements OnInit {
   }
 
   openPdfPopup(reportId: number): void {
-    this.http.get(`${environment.apiBaseUrl}/scheduled-floor-reports/${reportId}/pdf-view`, { responseType: 'blob' }).subscribe({
-      next: (blob) => {
-        if (blob && blob.size > 0) {
-          const blobUrl = URL.createObjectURL(blob);
-          this.sanitizedPdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(blobUrl);
-          this.showPdfPopup = true;
-        } else {
-          this.errorMessage = "The PDF file is empty or could not be loaded.";
-        }
-      },
-      error: () => {
-        this.errorMessage = "Failed to load PDF. Please check server logs.";
-      }
-    });
+    const url = `${environment.apiBaseUrl}/scheduled-floor-reports/${reportId}/pdf-view`;
+    this.sanitizedPdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);  
+    this.pdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    this.showPdfPopup = true;
+
   }
 
   closePdfPopup(): void {
     this.showPdfPopup = false;
-    if (this.sanitizedPdfUrl) {
+    if (this.pdfUrl) {
       URL.revokeObjectURL(this.sanitizedPdfUrl as any);
       this.sanitizedPdfUrl = null;
     }

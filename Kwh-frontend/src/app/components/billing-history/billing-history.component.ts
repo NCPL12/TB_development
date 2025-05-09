@@ -24,6 +24,7 @@ export class BillingHistoryComponent implements OnInit {
   errorMessage = "";
   showPdfPopup = false;
   sanitizedPdfUrl: SafeResourceUrl | null = null;
+  pdfUrl: SafeResourceUrl | null = null;  
   role: string = "";
   userName: string = "";
 
@@ -103,27 +104,18 @@ export class BillingHistoryComponent implements OnInit {
     });
   }
 
-
-  openPdfPopup(billId: number): void {
-    this.http.get(`${environment.apiBaseUrl}/bill-history-pdf/${billId}`, { responseType: 'blob' }).subscribe({
-      next: (blob) => {
-        if (blob.size > 0) {
-          const blobUrl = URL.createObjectURL(blob);
-          this.sanitizedPdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(blobUrl);
-          this.showPdfPopup = true;
-        } else {
-          this.errorMessage = "The PDF file is empty or could not be loaded.";
-        }
-      },
-      error: () => this.errorMessage = "Failed to load PDF. Please check server logs."
-    });
+  openPdfPopup(billId: number, billName: string): void {
+    const url = `${environment.apiBaseUrl}/bill-history-pdf/${billId}`;
+   this.sanitizedPdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);  
+    this.pdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    this.showPdfPopup = true;
   }
-
+  
   closePdfPopup(): void {
     this.showPdfPopup = false;
     if (this.sanitizedPdfUrl) {
       URL.revokeObjectURL(this.sanitizedPdfUrl as any);
-      this.sanitizedPdfUrl = null;
+      this.sanitizedPdfUrl = null;  
     }
   }
   

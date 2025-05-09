@@ -24,6 +24,8 @@ export class ReportHistoryComponent implements OnInit {
   sanitizedPdfUrl: SafeResourceUrl | null = null;
   role: string = "";
   userName: string = "";
+  pdfUrl: SafeResourceUrl | null = null;
+
 
   constructor(
     private http: HttpClient,
@@ -78,19 +80,38 @@ export class ReportHistoryComponent implements OnInit {
     });
   }
 
+  formatDate(dateString: string): string {
+    // Check if it's a date range (contains 'to')
+    if (dateString.includes('to')) {
+      const [start, end] = dateString.split(' to ').map(date => {
+        const parts = date.split('-');
+        return `${parts[2]}-${parts[1]}-${parts[0]}`;
+      });
+      return `${start} to ${end}`;
+    }
+
+    // Try different date formats
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) {
+      // Try another format
+      const parts = dateString.split('-');
+      if (parts.length === 3) {
+        return `${parts[0]}-${parts[1]}-${parts[2]}`;
+      }
+      return dateString;
+    }
+    return date.toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    }).replace(/\//g, '-');
+  }
+
   openPdfPopup(reportId: number): void {
-    this.http.get(`${environment.apiBaseUrl}/report-history-pdf/${reportId}`, { responseType: 'blob' }).subscribe({
-      next: (blob) => {
-        if (blob.size > 0) {
-          const blobUrl = URL.createObjectURL(blob);
-          this.sanitizedPdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(blobUrl);
-          this.showPdfPopup = true;
-        } else {
-          this.errorMessage = "The PDF file is empty or could not be loaded.";
-        }
-      },
-      error: () => this.errorMessage = "Failed to load PDF. Please check server logs."
-    });
+    const url = `${environment.apiBaseUrl}/report-history-pdf/${reportId}`;
+    this.sanitizedPdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);  
+    this.pdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    this.showPdfPopup = true;
   }
 
   closePdfPopup(): void {
